@@ -167,6 +167,6 @@ Innovartus can launch a SaaS product quickly and cheaply by combining **GitHub**
 
 ## Appendix A — Submission links (fill in)
 
-- **GitHub repository:** https://github.com/YOUR_USERNAME/innovartus-workspace  
-- **Live application:** https://YOUR-SERVICE.onrender.com  
+- **GitHub repository:** https://github.com/Larry-lingston/innovartus-workspace  
+- **Live application:** https://YOUR-SERVICE.onrender.com _(fill after Render deploy)_  
 - **Health check:** https://YOUR-SERVICE.onrender.com/health
