@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Innovartus Workspace{% endblock %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Cloud SaaS · {{ workspace.plan }}</p>
+  <h1>{{ workspace.name }}</h1>
+  <p class="lede">Create and track team tasks in a lightweight SaaS board. Deployed with GitHub CI/CD for fast, low-cost delivery.</p>
+</section>
+
+<section class="stats" aria-label="Workspace stats">
+  <div class="stat">
+    <span class="stat-label">Pending</span>
+    <span class="stat-value">{{ pending }}</span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Done</span>
+    <span class="stat-value">{{ done }}</span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Uptime (hrs)</span>
+    <span class="stat-value">{{ uptime_hours }}</span>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>New task</h2>
+  <form class="task-form" method="post" action="{{ url_for('create_task') }}">
+    <label class="field grow">
+      <span>Title</span>
+      <input type="text" name="title" placeholder="Ship CI/CD pipeline" maxlength="120" required />
+    </label>
+    <label class="field">
+      <span>Priority</span>
+      <select name="priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+    </label>
+    <button type="submit" class="btn">Add task</button>
+  </form>
+</section>
+
+<section class="panel">
+  <h2>Task board</h2>
+  {% if tasks %}
+  <ul class="task-list">
+    {% for task in tasks %}
+    <li class="task task-{{ task.status }} priority-{{ task.priority }}">
+      <div class="task-main">
+        <p class="task-title">{{ task.title }}</p>
+        <p class="task-meta">
+          <span class="pill">{{ task.priority }}</span>
+          <span class="pill">{{ task.status }}</span>
+          <span>{{ task.created_at }}</span>
+          <span class="mono">#{{ task.id }}</span>
+        </p>
+      </div>
+      <div class="task-actions">
+        <form method="post" action="{{ url_for('toggle_task', task_id=task.id) }}">
+          <button type="submit" class="btn btn-ghost">
+            {% if task.status == 'pending' %}Complete{% else %}Reopen{% endif %}
+          </button>
+        </form>
+        <form method="post" action="{{ url_for('delete_task', task_id=task.id) }}">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">No tasks yet. Add one above to start the workspace.</p>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}About · Innovartus{% endblock %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Case Study 3</p>
+  <h1>About this SaaS</h1>
+  <p class="lede">
+    Innovartus Technologies is a startup building a cloud-hosted SaaS product.
+    This demo workspace shows quick deployment, pay-as-you-go hosting, and automatic updates via CI/CD.
+  </p>
+</section>
+
+<section class="panel prose">
+  <h2>Architecture choices</h2>
+  <ul>
+    <li><strong>Service model:</strong> PaaS (Render) to host the Flask app without managing servers.</li>
+    <li><strong>Version control:</strong> GitHub repository with clear commits.</li>
+    <li><strong>CI/CD:</strong> Auto-deploy on every push to the main branch.</li>
+    <li><strong>Monitoring:</strong> Platform logs + <code>/health</code> endpoint for uptime checks.</li>
+  </ul>
+  <h2>Growth path (10 → 10,000 users)</h2>
+  <p>
+    Start on a free/starter instance. As traffic grows, scale vertically (larger instance) or
+    horizontally (more instances behind a load balancer), add a managed database, and enable
+    autoscaling / CDN caching for static assets.
+  </p>
+</section>
+{% endblock %}
