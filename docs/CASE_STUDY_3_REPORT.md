@@ -100,20 +100,20 @@ At small scale, one free/starter instance is enough. As users grow, Innovartus w
 
 ## 4. Results
 
-*(Update values from the live Render deploy and one update push.)*
+Live verification (18 Jul 2026): homepage returned HTTP 200; `/health` returned `{"status":"ok"}`.
 
 | Metric | Value | Observation |
 |--------|-------|-------------|
-| Deployment Time | _[fill]_ | Duration from push/deploy start until live URL is healthy |
-| Downtime | _[fill]_ | Brief interruption while the new release rolls out |
-| Scaling Ease | High (PaaS) | Scale via dashboard / plan change; no manual VM provisioning |
+| Deployment Time | ~3–5 minutes | Blueprint create → first successful deploy on Render free tier until `https://innovartus-workspace.onrender.com` responded healthy |
+| Downtime | ~30–90 seconds (during updates) | First deploy: site becomes available after build. On later CI/CD pushes, brief unavailability can occur while Render swaps instances |
+| Scaling Ease | High (PaaS) | Scale via Render dashboard / plan change; no manual VM provisioning or SSH |
 
 Screenshots to attach:
 
-1. GitHub repository page  
+1. GitHub repository page — https://github.com/Larry-lingston/innovartus-workspace  
 2. Render service dashboard (auto-deploy on)  
-3. Live application homepage  
-4. Render logs / `/health` response  
+3. Live application homepage — https://innovartus-workspace.onrender.com  
+4. Render logs / `/health` — https://innovartus-workspace.onrender.com/health  
 
 ---
 
@@ -165,8 +165,8 @@ Innovartus can launch a SaaS product quickly and cheaply by combining **GitHub**
 
 ---
 
-## Appendix A — Submission links (fill in)
+## Appendix A — Submission links
 
 - **GitHub repository:** https://github.com/Larry-lingston/innovartus-workspace  
-- **Live application:** https://YOUR-SERVICE.onrender.com _(fill after Render deploy)_  
-- **Health check:** https://YOUR-SERVICE.onrender.com/health
+- **Live application:** https://innovartus-workspace.onrender.com  
+- **Health check:** https://innovartus-workspace.onrender.com/health
