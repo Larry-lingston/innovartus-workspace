@@ -38,15 +38,16 @@ Open http://127.0.0.1:5000
 - Render **Logs** dashboard → uptime / errors
 - Hit `/health` for JSON status
 
-## Deliverables checklist
+## Deliverables checklist (Word documents)
 
 | # | Deliverable | Location |
 |---|-------------|----------|
-| 1 | GitHub repo link | After push |
-| 2 | Live app link | Render URL |
-| 3 | Deployment screenshots | `docs/screenshots/` (add after deploy) |
-| 4 | Results table | `docs/results_table.md` |
-| 5 | Final report (3–5 pages) | `docs/CASE_STUDY_3_REPORT.md` |
+| 1 | GitHub repo link | https://github.com/Larry-lingston/innovartus-workspace |
+| 2 | Live app link | https://innovartus-workspace.onrender.com |
+| 3 | Deployment screenshots | `docs/Deployment_Screenshots.docx` |
+| 4 | Results table | `docs/Results_Table.docx` |
+| 5 | Final report (3–5 pages) | `docs/CASE_STUDY_3_REPORT.docx` |
+| — | Part A conceptual answers | `docs/Part_A_Conceptual_Answers.docx` |
 
 ## Stack
 
